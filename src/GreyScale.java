@@ -5,14 +5,14 @@ import javax.imageio.ImageIO;
 
 public class GreyScale {
 
-    public static void main(String[] args) {
+    public static void greyScale(String url) {
 
         BufferedImage image = null;
         File file = null;
 
         //Read image:
         try {
-            file = new File("src/input.jpg");
+            file = new File(url);
             image = ImageIO.read(file);
 
             System.out.println("Reading success");
