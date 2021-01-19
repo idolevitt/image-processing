@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class EdgeDetection {
 
-    public static void main(String[] args) {
+    public static void EdgeDetection(String[] args) {
 
         BufferedImage image = null;
         File file = null;
