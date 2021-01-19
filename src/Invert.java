@@ -5,14 +5,14 @@ import java.io.IOException;
 
 public class Invert {
 
-    public static void main(String[] args) {
+    public static void invertColors(String url) {
 
         BufferedImage image= null;
         File file = null;
 
         //Read image:
         try {
-            file = new File("src/input.jpg");
+            file = new File(url);
             image = ImageIO.read(file);
 
             System.out.println("Reading succeeded");
