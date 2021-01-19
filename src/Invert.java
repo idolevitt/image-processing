@@ -21,9 +21,10 @@ public class Invert {
             System.out.println("Reading failed");
         }
 
+        //Inverting the RGB of every pixel while the alpha value stays the same
         for (int i = 0; i < image.getHeight(); i++) {
             for (int j = 0; j < image.getWidth(); j++) {
-                image.setRGB(j, i, image.getRGB(j, i) ^ 0xffffffff);
+                image.setRGB(j, i, image.getRGB(j, i) ^ 0x00ffffff);
             }
         }
 
