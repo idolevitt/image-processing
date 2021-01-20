@@ -3,15 +3,17 @@ public class Node {
     private int value;
     private Node parent;
     private boolean isMarked;
+    private int row;
+    private int col;
 
-    public Node(int value, Node parent, boolean isMarked) {
+    public Node(int value, Node parent, boolean isMarked, int row, int col) {
         this.value = value;
         this.parent = parent;
         this.isMarked = isMarked;
     }
 
-    public Node(int value) {
-        this(value, null, false);
+    public Node(int value, int row, int col) {
+        this(value, null, false, row, col);
     }
 
     public int getValue() {
@@ -36,5 +38,13 @@ public class Node {
 
     public void setMarked(boolean marked) {
         isMarked = marked;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
     }
 }
