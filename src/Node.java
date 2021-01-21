@@ -10,6 +10,8 @@ public class Node {
         this.value = value;
         this.parent = parent;
         this.isMarked = isMarked;
+        this.row = row;
+        this.col = col;
     }
 
     public Node(int value, int row, int col) {

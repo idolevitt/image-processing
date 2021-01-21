@@ -5,14 +5,14 @@ import java.io.IOException;
 
 public class EdgeDetection {
 
-    public static void EdgeDetection(String[] args) {
+    public static void edgeDetection(String source, String target) {
 
         BufferedImage image = null;
         File file = null;
 
         //Read image:
         try {
-            file = new File("src/input.jpg");
+            file = new File(source);
             image = ImageIO.read(file);
 
             System.out.println("Reading success");
@@ -47,7 +47,7 @@ public class EdgeDetection {
         //Write image:
 
         try{
-            File output = new File("outputGS.png");
+            File output = new File(target);
 
             ImageIO.write(image, "png", output);
 
@@ -143,5 +143,44 @@ public class EdgeDetection {
         sobelArr[height - 1][width - 1] = sobelArr[height - 2][width - 2];
 
         return sobelArr;
+    }
+
+    public static int[][] getGradientArray(String source) {
+
+        BufferedImage image = null;
+        File file = null;
+
+        //Read image:
+        try {
+            file = new File(source);
+            image = ImageIO.read(file);
+
+            System.out.println("Reading success");
+        }
+        catch (IOException i){
+            System.out.println("Reading failed");
+        }
+
+        //Separating color layers and calculating gradient array for each layer
+        int[][] sobelRed = getSobelArray(separateColor("red", image));
+        int[][] sobelGreen = getSobelArray(separateColor("green", image));
+        int[][] sobelBlue = getSobelArray(separateColor("blue", image));
+
+        int height = image.getHeight();
+        int width = image.getWidth();
+
+
+        int[][] gradients = new int[height][width];
+
+        //Setting image as greyscale from the three sobel color layers:
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+
+                int avg = (sobelRed[y][x] + sobelGreen[y][x] + sobelBlue[y][x]) / 3;
+
+                gradients[y][x] = avg;
+            }
+        }
+        return gradients;
     }
 }
