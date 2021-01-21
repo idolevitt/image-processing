@@ -43,4 +43,18 @@ public class Image {
             System.out.println("Writing failed");
         }
     }
+
+    public static void writeImage(BufferedImage image, String url){
+
+        try{
+            File output = new File(url);
+
+            ImageIO.write(image, "png", output);
+
+            System.out.println("Writing success");
+        }
+        catch (IOException i){
+            System.out.println("Writing failed");
+        }
+    }
 }
