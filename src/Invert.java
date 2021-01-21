@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Invert {
 
-    public static void invertColors(String url) {
+    public static BufferedImage invertColors(String url) {
 
         BufferedImage image= null;
         File file = null;
@@ -28,6 +28,9 @@ public class Invert {
             }
         }
 
+        return image;
+
+/*
         //Write image:
 
         try{
@@ -40,6 +43,8 @@ public class Invert {
         catch (IOException i){
             System.out.println("Writing failed");
         }
+
+ */
 
     }
 }
