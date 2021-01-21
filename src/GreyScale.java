@@ -5,7 +5,7 @@ import javax.imageio.ImageIO;
 
 public class GreyScale {
 
-    public static void greyScale(String url) {
+    public static BufferedImage greyScale(String url) {
 
         BufferedImage image = null;
         File file = null;
@@ -44,17 +44,6 @@ public class GreyScale {
             }
         }
 
-            //Write image:
-
-        try{
-            File output = new File("outputGS.png");
-
-            ImageIO.write(image, "png", output);
-
-            System.out.println("Writing success");
-        }
-        catch (IOException i){
-            System.out.println("Writing failed");
-        }
+        return image;
     }
 }
