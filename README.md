@@ -13,10 +13,10 @@
 <br/>
 
 <h2>Grey Scale:</h2>
-<img src="images/bird-greyscale.jpg" width = "50%">
+<img src="images/bird-greyscale.png" width = "50%">
 
 <br/>
 <br/>
 
 <h2>Invert Colors:</h2>
-<img src="images/bird-invert.jpg" width = "50%">
+<img src="images/bird-invert.png" width = "50%">
